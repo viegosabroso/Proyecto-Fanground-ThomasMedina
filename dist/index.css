@@ -3,7 +3,7 @@ my-header{
     padding: 20px;
     display: flex;
     align-items: center;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     margin-bottom: 4vw;
     
 }
@@ -25,7 +25,7 @@ body{
     display: flex;
     height: fit-content;
     width: 15%;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     border-radius: 0 20px 20px 0;
     align-items:baseline;
     margin: 0;

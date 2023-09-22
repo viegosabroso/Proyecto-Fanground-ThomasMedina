@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 .busqueda{
     font-family: 'Lato', sans-serif;
-    border:3px black solid ;
+    border:3px rgb(255, 0, 0) solid ;
     width: 20vw;
     height: 30px;
     border-radius: 100px;

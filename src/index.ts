@@ -15,6 +15,7 @@ export class Appcontainer extends HTMLElement {
   posting: Post[] = []
   sooning: Soon[] = []
   video: Video[] = []
+  
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
@@ -69,15 +70,12 @@ export class Appcontainer extends HTMLElement {
       usercomenting.textContent=`${data.user}`
       containerpostdiv.appendChild(usercomenting)
       //le añado la caja de comentario 
-
-     
-      
       const commentignbox = document.createElement("input")
       commentignbox.classList.add("textbox")
       commentignbox.setAttribute("placeholder", "what are you thinking")
       containerpostdiv.appendChild(commentignbox)
 
-      //froeach delpost
+      //froeach del post
       datafriends.forEach((containerpost)=>{
         const containerposts = document.createElement("my-post") as Post
         containerposts.classList.add("containerpost")
@@ -114,7 +112,7 @@ export class Appcontainer extends HTMLElement {
         this.shadowRoot?.appendChild(containersoondiv)
 
       })
-      
+      //uso un contenedor para contener el texto y y el foreach para evitar problemas en el css despues
       containerboth.appendChild(containersoondiv)
       this.shadowRoot?.appendChild(containerboth)
       //div del video 
