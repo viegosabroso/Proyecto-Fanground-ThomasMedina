@@ -1,0 +1,20 @@
+@font-face {
+    font-family: 'Enigma';
+    src: url("./Enigma-Bold.otf");
+}
+.imgsoon{
+    border-radius: 20px ;
+    margin-right: 1vw;
+    filter: brightness(0.5);
+}
+section{
+    position: relative;
+    bottom: 6vw;
+    z-index: 10;
+    color: white;
+    left: 1vw;
+}
+.concertname{
+    font-weight:bold;
+    font-family: 'Enigma';
+}

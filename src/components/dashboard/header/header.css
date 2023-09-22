@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+.busqueda{
+    font-family: 'Lato', sans-serif;
+    border:3px black solid ;
+    width: 20vw;
+    height: 30px;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    padding-left: 5px;
+    margin-right: 1vw;
+}
+.filter{
+    margin-left: 13vw;
+}
+.lupa{
+    margin-right: 16vw;
+}
+.user{
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    margin-left: 1vw;
+    margin-right: 1vw;
+}
+section{
+    margin-right: 40vw;
+    
+    
+}
+

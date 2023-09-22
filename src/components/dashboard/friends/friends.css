@@ -1,0 +1,30 @@
+.container{
+    display: flex;
+    height: fit-content;
+
+    width: 15%;
+    background-color: white;
+    border-radius: 0 20px 20px 0;
+    align-items:baseline;
+
+}
+p{
+    font-family: 'Lato', sans-serif;
+    margin: 0 ;
+
+}
+.imgs{
+    border-radius: 10px;
+
+}
+.username{
+    font-weight: bolder;
+    font-size: 1.2vw;
+}
+section{
+    display: flex;
+    flex-direction: column;
+}
+.status{
+    font-weight: lighter;
+}

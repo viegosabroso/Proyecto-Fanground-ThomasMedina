@@ -1,0 +1,154 @@
+
+my-header{
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    margin-bottom: 4vw;
+    
+}
+my-post{
+    
+    display: flex;
+    flex-direction: row;
+padding-top: 2vw;
+    border-top: 2px solid rgb(231, 231, 231);
+
+    
+}
+body{
+    margin: 0;
+    background-color: rgb(6, 6, 6);
+}
+.containerfriends{
+    flex-direction: column;
+    display: flex;
+    height: fit-content;
+    width: 15%;
+    background-color: white;
+    border-radius: 0 20px 20px 0;
+    align-items:baseline;
+    margin: 0;
+}
+.textofriends{
+    
+    font-family: 'Lato', sans-serif;
+    margin-left: 1vw ;
+    font-weight: bolder;
+    font-size: 1.5vw;
+
+}
+
+.container{
+    display: flex;
+    gap: 5px;
+    margin-bottom: 1vw;
+}
+.postdiv{
+    font-family: 'Lato', sans-serif;
+    display: flex;
+    flex-direction: column;
+    left: 20%;
+    position: absolute;
+    top: 134px;
+    width: 50%;
+    background-color: white;
+    height: fit-content;
+    border-radius: 20px;
+    justify-content: space-between;
+
+    
+    
+}
+.imguser{
+    position: relative;
+    top: 8vw;
+    left: 4vw;
+    width: 5vw;
+    height: 5vw;
+    border-radius: 20px;
+    border: 0.3vw solid white;
+}
+.textbox{
+    display: flex;
+    align-items: start;
+    align-self: center;
+    width: 70%;
+    height: 4vw;
+    background-color: rgb(214, 214, 214);
+    border: none;
+    border-radius: 20px;
+    padding: 1vw;
+    margin-bottom: 2vw;
+
+}
+
+.usercommenting{
+    position: relative;
+    left: 10vw;
+    top: 2vw;
+    font-size: 2vw;
+    font-weight: bolder;
+}
+.soontextt{
+    font-weight:bolder ;
+    font-size: 2vw;
+    margin-top: 0;
+    margin-bottom:  0.5vw;
+
+}
+.soondiv{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    
+}
+.soondiv::-webkit-scrollbar{
+    display: none;
+}
+.both{
+    
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 134px;
+    left: 76vw;
+    
+    border-radius: 20px 0px 0px 20px;
+    overflow-x: scroll;
+    padding: 1vw;
+    width: 22vw;
+    height: 17vw;
+    font-family: 'Lato', sans-serif;
+    background-color: white;
+}
+.videodiv{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 33vw;
+    left: 76vw;
+    gap: 10px;
+    border-radius: 20px 0px 0px 20px;
+    overflow-y: scroll;
+    padding: 1vw;
+    width: 22vw;
+    height: 21vw;
+    font-family: 'Lato', sans-serif;
+    background-color: white;
+}
+.videodiv::-webkit-scrollbar{
+    display: none;
+}
+::-webkit-scrollbar{
+    display: none;
+}
+.populartext{
+    font-weight: bolder;
+    font-size: 2vw;
+}
+/*estilos para pantallas pequeñas*/
+
+@media (max-width: 768px) {
+   
+}

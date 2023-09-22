@@ -1,0 +1,17 @@
+section{
+    display: flex;
+    flex-direction: column;
+}
+img{
+    border-radius: 20px;
+    margin-right: 1vw;
+    margin-left: 1vw;
+    margin-bottom: 1vw;
+}
+    
+.usename{
+    font-weight: bolder;
+    font-size: 1.4vw;
+    margin: 0;
+    padding: 0;
+}
