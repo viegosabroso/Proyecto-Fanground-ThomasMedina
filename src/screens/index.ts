@@ -1,13 +1,13 @@
-import "./components/indexson";
-import {data} from "./components/data/data";
-import { datafriends } from "./components/data/datafriends";
-import { Friends} from "./components/indexson";
-import { attrfriends } from "./components/dashboard/friends/friends";
-import { Post, attrspost } from "./components/dashboard/post/post";
-import { dataoncert } from "./components/data/dataconcert";
-import { Soon, attrsSoon } from "./components/dashboard/soon/soon";
-import { Video, attrsvideo } from "./components/dashboard/videos/videos";
-import { datavideo } from "./components/data/datavideo";
+import "../components/indexson";
+import {data} from "../components/data/data";
+import { datafriends } from "../components/data/datafriends";
+import { Friends} from "../components/indexson";
+import { attrfriends } from "../components/dashboard/friends/friends";
+import { Post, attrspost } from "../components/dashboard/post/post";
+import { dataoncert } from "../components/data/dataconcert";
+import { Soon, attrsSoon } from "../components/dashboard/soon/soon";
+import { Video, attrsvideo } from "../components/dashboard/videos/videos";
+import { datavideo } from "../components/data/datavideo";
 
 export class Appcontainer extends HTMLElement {
 
@@ -19,9 +19,6 @@ export class Appcontainer extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
-
-
-    
   }
 
   connectedCallback() {
