@@ -9,6 +9,7 @@ import { Soon, attrsSoon } from "../components/dashboard/soon/soon";
 import { Video, attrsvideo } from "../components/dashboard/videos/videos";
 import { datavideo } from "../components/data/datavideo";
 
+
 export class Appcontainer extends HTMLElement {
 
   friend: Friends[] = []
@@ -135,4 +136,4 @@ export class Appcontainer extends HTMLElement {
   }
 }
 
-customElements.define("app-container", Appcontainer);
+customElements.define("my-dashboard", Appcontainer);
