@@ -1,0 +1,36 @@
+section{
+    display: flex;
+    flex-direction: column;
+    height: 20vw;
+    width: 15%;
+    background-color: white;
+    border-radius: 0 20px 20px 0;
+    align-items: center;
+    margin-bottom: 2vw;
+}
+img{position: relative;
+    bottom: 40px;
+    border-radius: 10%;
+    border: 2px solid white;
+
+}
+p{
+    font-family: 'Lato', sans-serif;
+    margin: 0 ;
+}
+.status{
+    position: relative;
+    bottom: 1vw;
+    font-size: 1vw;
+    opacity: 70%;
+}
+.usename{
+    position: relative;
+    bottom: 1vw;
+    font-size: 2.5vw;
+    margin: 0;
+    font-weight: bolder;
+}
+.concert{
+    margin-left: 0.5vw; ;
+}

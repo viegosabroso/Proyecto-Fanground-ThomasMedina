@@ -1,5 +1,5 @@
 import { Profile } from "../../screens/Profile"
-
+import Profilecss from "./profile.css"
 
 export enum attrsuser {
     "user" = "user",
@@ -58,7 +58,7 @@ export enum attrsuser {
     render() {
       if (this.shadowRoot) {
         this.shadowRoot.innerHTML = `
-
+            <style>${Profilecss}}</style>
               <section>
               <h1 class="usename">${this.user}</h1>
               <p class="status">${this.status}</p>
@@ -68,6 +68,7 @@ export enum attrsuser {
               <button>Edit profile</button>
               </section>
               <img src="${this.userimg}" width="160vw">
+              <p>
         `;
       }
     }

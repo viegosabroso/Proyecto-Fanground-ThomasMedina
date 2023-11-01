@@ -25,4 +25,5 @@ customElements.define("index-container", FanGround);
 /*my-dashboard
   my-signupcontainer
   my-logincontainer
+  my-profile
 */
