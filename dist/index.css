@@ -147,8 +147,5 @@ body{
     font-weight: bolder;
     font-size: 2vw;
 }
-/*estilos para pantallas pequeñas*/
 
-@media (max-width: 768px) {
-   
-}
+

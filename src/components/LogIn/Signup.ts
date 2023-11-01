@@ -5,7 +5,7 @@ export enum attrslogin {
   "buttontext" = "buttontext"
 }
 
-export class Login extends HTMLElement {
+export class Signup extends HTMLElement {
   firsttxt?: string
   buttontext?:string
 
@@ -64,4 +64,4 @@ export class Login extends HTMLElement {
   }
 }
 
-customElements.define("my-login", Login);
+customElements.define("my-signup", Signup);

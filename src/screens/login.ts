@@ -2,7 +2,8 @@ import "../components/indexson";
 
 
 
-export class Containerlogin extends HTMLElement {
+
+export class Containersignup extends HTMLElement {
 
 
   constructor() {
@@ -16,9 +17,11 @@ export class Containerlogin extends HTMLElement {
 
   render() {
     if (this.shadowRoot) {
-        
+        this.shadowRoot.innerHTML = `
+        <my-signup firsttxt="" buttontext="Log in"></my-signup>
+        `
     }
   }
 }
 
-customElements.define("my-login", Containerlogin);
+customElements.define("my-signupcontainer", Containersignup);
