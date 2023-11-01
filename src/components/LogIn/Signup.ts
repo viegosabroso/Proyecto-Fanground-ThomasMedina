@@ -57,6 +57,7 @@ export class Signup extends HTMLElement {
     <input type="checkbox" id="checkbox1" value="second_checkbox">
     <label for="checkbox1">Receive news and product emails.</label>
     </section>
+    <div class="linea"></div>
     <p>By registering, you agree to provide accurate information and use our services responsibly within legal and ethical boundaries.</p>
     <button>${this.buttontext}</button>
     </div>
