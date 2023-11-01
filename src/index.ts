@@ -1,6 +1,7 @@
 import "./screens/Dashboard"
 import "./screens/signup"
 import "./screens/login"
+import "./screens/Profile"
 export class FanGround extends HTMLElement{
     constructor() {
         super();
@@ -14,7 +15,7 @@ export class FanGround extends HTMLElement{
 
     render(){
 
-        const contenedor = document.createElement("my-dashboard");
+        const contenedor = document.createElement("my-profile");
         this.shadowRoot?.appendChild(contenedor)
     }
     
