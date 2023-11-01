@@ -39,6 +39,7 @@ export class Header extends HTMLElement {
     if (this.shadowRoot) {
       this.shadowRoot.innerHTML = `
             <style>${headercss}</style>
+            <div class="square">
             <section>
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/2048px-Hamburger_icon.svg.png" width="30em" height="30em">
             <img src="./FANGROUND.png" width="300em" height="30em">
@@ -50,6 +51,7 @@ export class Header extends HTMLElement {
             <img src="https://cdn-icons-png.flaticon.com/512/60/60977.png" height="25em">
             <p class="user">${this.user}</p>
             <img src="https://cdn.icon-icons.com/icons2/1863/PNG/512/person_118819.png" height="25em">
+            </div>
             `;
     }
   }

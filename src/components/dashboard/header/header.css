@@ -24,7 +24,14 @@
 }
 section{
     margin-right: 40vw;
-    
-    
+       
+}
+
+.square{
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    margin-bottom: 4vw;
 }
 
