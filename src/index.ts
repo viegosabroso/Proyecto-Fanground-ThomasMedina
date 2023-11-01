@@ -1,4 +1,5 @@
 import "./screens/Dashboard"
+import "./screens/signup"
 import "./screens/login"
 export class FanGround extends HTMLElement{
     constructor() {
@@ -13,7 +14,7 @@ export class FanGround extends HTMLElement{
 
     render(){
 
-        const contenedor = document.createElement("my-signupcontainer");
+        const contenedor = document.createElement("my-logincontainer");
         this.shadowRoot?.appendChild(contenedor)
     }
     
@@ -22,4 +23,5 @@ export class FanGround extends HTMLElement{
 customElements.define("index-container", FanGround);
 /*my-dashboard
   my-signupcontainer
+  my-logincontainer
 */

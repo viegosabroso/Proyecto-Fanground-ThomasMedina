@@ -1,6 +1,6 @@
 import { Timestamp } from "firebase/firestore";
 import Signupcss from "./signup.css";
-export enum attrslogin {
+export enum attrssingup {
   "firsttxt" = "firsttxt",
   "buttontext" = "buttontext"
 }
@@ -19,23 +19,23 @@ export class Signup extends HTMLElement {
   }
 
   static get observedAttributes() {
-    const attrslo: Record<attrslogin, null> = {
+    const attrssing: Record<attrssingup, null> = {
       firsttxt: null,
       buttontext: null
     };
-    return Object.keys(attrslo);
+    return Object.keys(attrssing);
   }
 
   attributeChangedCallback(
-    propName: attrslogin,
+    propName: attrssingup,
     oldValue: string | undefined,
     newValue: string | undefined
   ) {
     switch (propName) {
-      case attrslogin.firsttxt:
+      case attrssingup.firsttxt:
         this.firsttxt = newValue;
         break;
-      case attrslogin.buttontext:
+      case attrssingup.buttontext:
         this.buttontext = newValue
 
     }
