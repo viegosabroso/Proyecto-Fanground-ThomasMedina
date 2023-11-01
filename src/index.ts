@@ -14,7 +14,7 @@ export class FanGround extends HTMLElement{
 
     render(){
 
-        const contenedor = document.createElement("my-logincontainer");
+        const contenedor = document.createElement("my-dashboard");
         this.shadowRoot?.appendChild(contenedor)
     }
     
