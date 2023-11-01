@@ -1,5 +1,27 @@
+.inputpile{
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(255, 255, 255);
+    width: 20vw;
+    height: 3vw;
+    padding: 5px;
+}
+img{
+display: flex;
+margin-bottom: 3vw;
+}
+label{
+    width: 20px;
+}
 div{
-    width: fit-content;
-    height: fit-content;
-    background-color: white;
+    border-radius: 20px;
+    gap: 2vw;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(190, 190, 190);
+    align-items: center;
+}
+
+button{
+    width: 20vw;
 }

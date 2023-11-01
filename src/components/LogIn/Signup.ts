@@ -46,13 +46,13 @@ export class Signup extends HTMLElement {
     if (this.shadowRoot) {
       this.shadowRoot.innerHTML = `
     <style>${Signupcss}}</style>
-    <img src="./FANGROUND.png" width="300em" height="30em">
+    <img src="./FANGROUNDwhite.png" width="300em" height="30em">
     <div class="square">
     <h1>${this.firsttxt}</h1>
-    <input type="email" id="email">
-    <input type="text" id="user">
-    <input type="password" id="password">
-    <input type="passworc" id="paswordconfirm">
+    <input class="inputpile" type="email" id="email" placeholder="Email">
+    <input class="inputpile" type="text" id="user" placeholder="Nickname">
+    <input class="inputpile" type="password" id="password" placeholder="Password">
+    <input class="inputpile" type="passworc" id="paswordconfirm" placeholder="Confirm password">
     <section>
     <input type="checkbox" id="checkbox1" value="second_checkbox">
     <label for="checkbox1">Receive news and product emails.</label>
