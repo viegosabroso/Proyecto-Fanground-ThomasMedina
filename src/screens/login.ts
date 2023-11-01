@@ -1,8 +1,5 @@
 import "../components/indexson";
 
-
-
-
 export class Containersignup extends HTMLElement {
 
 

@@ -52,7 +52,7 @@ export class Signup extends HTMLElement {
     <input class="inputpile" type="email" id="email" placeholder="Email">
     <input class="inputpile" type="text" id="user" placeholder="Nickname">
     <input class="inputpile" type="password" id="password" placeholder="Password">
-    <input class="inputpile" type="passworc" id="paswordconfirm" placeholder="Confirm password">
+    <input class="inputpile" type="password" id="paswordconfirm" placeholder="Confirm password">
     <section>
     <input type="checkbox" id="checkbox1" value="second_checkbox">
     <label for="checkbox1">Receive news and product emails.</label>
