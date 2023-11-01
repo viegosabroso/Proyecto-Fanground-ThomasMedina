@@ -66,9 +66,11 @@ export enum attrsuser {
               <p>Profesional rocker</p>
               </div>
               <button>Edit profile</button>
+              <p>Concerts: 2</p>
+              <img src="Vector 1497.png" heigth="50px">
               </section>
               <img src="${this.userimg}" width="160vw">
-              <p>
+
         `;
       }
     }
