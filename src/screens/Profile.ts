@@ -16,6 +16,7 @@ export class Profile extends HTMLElement {
     if (this.shadowRoot) {
         this.shadowRoot.innerHTML = `
         <my-header></my-header>
+        <my-profilescr></my-profilescr>
         `
     }
   }
