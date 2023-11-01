@@ -18,7 +18,7 @@ export class Containersignup extends HTMLElement {
   render() {
     if (this.shadowRoot) {
         this.shadowRoot.innerHTML = `
-        <my-signup firsttxt="" buttontext="Log in"></my-signup>
+        <my-signup firsttxt="Create your account" buttontext="Sign up"></my-signup>
         `
     }
   }

@@ -1,5 +1,5 @@
 import { Timestamp } from "firebase/firestore";
-import { Signupcss } from "./signup.css";
+import Signupcss from "./signup.css";
 export enum attrslogin {
   "firsttxt" = "firsttxt",
   "buttontext" = "buttontext"
