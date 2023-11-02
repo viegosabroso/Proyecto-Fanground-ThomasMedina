@@ -67,7 +67,7 @@ export enum attrsuser {
               </div>
               <button>Edit profile</button>
               <p>Concerts: 2</p>
-              <img src="Vector 1497.png" heigth="50px">
+              <img src="Vector 1497.png" class="imguser" heigth="50px">
               </section>
               <img src="${this.userimg}" width="160vw">
 
