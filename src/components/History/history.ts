@@ -1,13 +1,13 @@
 
 
-export enum attrsuser {
+export enum attrshistory {
     "concertimg" = "concertimg",
     "concert" = "concert",
     "band" = "band",
     "date"= "date"
   }
   
-  export class Profilescr extends HTMLElement {
+  export class History extends HTMLElement {
 
     concertimg?: string
     concert?: string
@@ -24,7 +24,7 @@ export enum attrsuser {
     }
   
     static get observedAttributes() {
-      const attrs: Record<attrsuser, null> = {
+      const attrs: Record<attrshistory, null> = {
 
         concertimg: null,
         concert:null,
@@ -36,21 +36,21 @@ export enum attrsuser {
     }
   
     attributeChangedCallback(
-      propName: attrsuser,
+      propName: attrshistory,
       oldValue: string | undefined,
       newValue: string | undefined
     ) {
       switch (propName) {
-        case attrsuser.concertimg:
+        case attrshistory.concertimg:
         this.concertimg = newValue;
         break;
-        case attrsuser.concert:
+        case attrshistory.concert:
         this.concert = newValue;
         break;
-        case attrsuser.band:
+        case attrshistory.band:
         this.band = newValue;
         break;
-        case attrsuser.date:
+        case attrshistory.date:
         this.date = newValue;
         break;
       }
@@ -74,5 +74,5 @@ export enum attrsuser {
     }
   }
   
-  customElements.define("my-profilescr", Profilescr);
+  customElements.define("my-history", History);
   
