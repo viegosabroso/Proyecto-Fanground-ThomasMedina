@@ -5,14 +5,14 @@ export enum attrsuser {
     "user" = "user",
     "userimg" = "userimg",
     "status" = "status",
-    "concert" = "concert"
+
   }
   
   export class Profilescr extends HTMLElement {
     user?: string
     userimg?: string
     status?: string
-    concert?: string
+
 
     constructor() {
       super();
@@ -28,7 +28,7 @@ export enum attrsuser {
         user: null,
         userimg: null,
         status:null,
-        concert:null,
+
       };
       return Object.keys(attrs);
     }
@@ -48,9 +48,7 @@ export enum attrsuser {
         case attrsuser.status:
         this.status = newValue;
         break;
-        case attrsuser.concert:
-        this.concert = newValue;
-        break;
+
       }
       this.render();
     }

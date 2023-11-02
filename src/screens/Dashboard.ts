@@ -4,7 +4,7 @@ import { datafriends } from "../components/data/datafriends";
 import { Friends} from "../components/indexson";
 import { attrfriends } from "../components/dashboard/friends/friends";
 import { Post, attrspost } from "../components/dashboard/post/post";
-import { dataoncert } from "../components/data/dataconcert";
+import { dataoncert } from "../components/data/databands";
 import { Soon, attrsSoon } from "../components/dashboard/soon/soon";
 import { Video, attrsvideo } from "../components/dashboard/videos/videos";
 import { datavideo } from "../components/data/datavideo";
