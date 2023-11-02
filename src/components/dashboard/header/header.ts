@@ -44,10 +44,6 @@ export class Header extends HTMLElement {
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/2048px-Hamburger_icon.svg.png" width="30em" height="30em">
             <img src="./FANGROUND.png" width="300em" height="30em">
             </section>
-            <div class="busqueda">
-            <img src="https://icones.pro/wp-content/uploads/2021/06/icone-loupe-gris.png" height="25px" class="lupa">
-            <img src="https://cdn.icon-icons.com/icons2/2348/PNG/512/filter_settings_icon_143016.png" height="25em">
-            </div>
             <img src="https://cdn-icons-png.flaticon.com/512/60/60977.png" height="25em">
             <p class="user">${this.user}</p>
             <img src="https://cdn.icon-icons.com/icons2/1863/PNG/512/person_118819.png" height="25em">

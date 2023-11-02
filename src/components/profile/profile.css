@@ -1,22 +1,46 @@
-section{
+.section1{
     display: flex;
     flex-direction: column;
-    height: 20vw;
-    width: 15%;
+    height: fit-content;
+    padding:15px;
+    width: 28%;
     background-color: white;
     border-radius: 0 20px 20px 0;
-    align-items: center;
+    align-items: baseline;
+    font-family: 'Lato', sans-serif;
     margin-bottom: 2vw;
+    gap: 10px;
 }
-.imguser{position: relative;
+.section2{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    right: 150px;
     bottom: 40px;
+    gap: 30px;
+
+}
+.imguser{
     border-radius: 10%;
     border: 2px solid white;
+
 
 }
 p{
     font-family: 'Lato', sans-serif;
     margin: 0 ;
+}
+button{
+    width: 15vw;
+    background-color: rgb(255, 14, 14) ;
+    font-family: 'Enigma';
+    font-size: 15pt;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 1vw;
+    padding: 5px;
+    color: white;
+    font-weight:bold; 
 }
 .status{
     position: relative;
@@ -33,4 +57,18 @@ p{
 }
 .concert{
     margin-left: 0.5vw; ;
+}
+.medal{
+    display: flex;
+    border-radius: 100px;
+    height: 20px;
+    width: 15vw;
+    padding: 5px;
+    background-color: black;
+    justify-content: center;
+    color: white;
+}
+.container{
+    display: flex;
+    flex-direction: row;
 }

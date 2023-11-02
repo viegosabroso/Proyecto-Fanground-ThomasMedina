@@ -59,17 +59,20 @@ export enum attrsuser {
       if (this.shadowRoot) {
         this.shadowRoot.innerHTML = `
             <style>${Profilecss}}</style>
-              <section>
-              <h1 class="usename">${this.user}</h1>
-              <p class="status">${this.status}</p>
-              <div class="medal" >
-              <p>Profesional rocker</p>
-              </div>
-              <button>Edit profile</button>
-              <p>Concerts: 2</p>
-              <img src="Vector 1497.png" class="imguser" heigth="50px">
-              </section>
-              <img src="${this.userimg}" width="160vw">
+            <div class="container">
+            <section class="section1">
+            <h1 class="usename">${this.user}</h1>
+            <p class="status">${this.status}</p>
+            <div class="medal" >
+            <p>Profesional rocker</p>
+            </div>
+            <button>Edit profile</button>
+            </section>
+            <section class="section2">
+            <img src="${this.userimg}" class="imguser" height="150" width="150" >
+            <p>Concerts: 2</p>
+            </section>
+            </div>
 
         `;
       }
