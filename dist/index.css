@@ -4,7 +4,7 @@ my-post{
     
     display: flex;
     flex-direction: row;
-padding-top: 2vw;
+    padding-top: 2vw;
     border-top: 2px solid rgb(231, 231, 231);
 
     

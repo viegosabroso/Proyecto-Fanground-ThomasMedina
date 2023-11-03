@@ -1,4 +1,4 @@
-
+import historycss from "./history.css"
 
 export enum attrshistory {
     "concertimg" = "concertimg",
@@ -60,10 +60,11 @@ export enum attrshistory {
     render() {
       if (this.shadowRoot) {
         this.shadowRoot.innerHTML = `
+        <style>${historycss}</style>
         <div class="tarjeta">
         <img src="${this.concertimg}">
         <section>
-        <h1>${this.concert}}</h1>
+        <h1>${this.concert}</h1>
         <p>${this.band}</p>
         <p>${this.date}</p>
         </section>

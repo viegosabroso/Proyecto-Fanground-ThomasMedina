@@ -18,13 +18,21 @@ export class Profile extends HTMLElement {
         this.shadowRoot.innerHTML = `
         <my-header user="thomas"></my-header>
         <my-profilescr user="Username" userimg="https://s3-alpha-sig.figma.com/img/fe9a/35bd/67f0d549b7edceac6dbc1af7eec140e0?Expires=1699833600&Signature=ol5rLecGq6b9Nw8d~PYux0HE43DUQuCdjPiYtSEgx8D9C3bDDVRe3fqoCUjCzGurf0kA0VQTNHOFS20glfnCX1silhqdWKWv~04gbozjZSuj5XGtLiil3xLo20dxjgnWtYLZ872qDSIkW6s7IBGicuocrmGChIN1KZhUCZsfDo2ARz1JJSAWot~ylwdvKWZ~Pxb7zF-UJqgzUYbY3emw6MOoFcQ5-CTQKFYzg3M9c-ZsuWCs737qcL~bFbIIVr8Ss-nGPASHdeK18Z9e-pS2-lEnFXKadIcAdxR44RyPHVwkTp9ctTIBXRJ5LwUj4sit1f-lPQQtv3Jd45AKASWekQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" status="Carpe diem..." ></my-profilescr>
-
+        <style>
+        p{
+          position: relative;
+          left: 35vw;
+          color:white;
+          font-family: 'Lato', sans-serif;
+        }
+        </style>
         `
     }
     const texthistory = this.ownerDocument.createElement("p")
     texthistory.textContent = "Recent events"
+    this.shadowRoot?.appendChild(texthistory)
     const History = this.ownerDocument.createElement("my-history")
-    History.setAttribute(attrshistory.concertimg, "a")
+    History.setAttribute(attrshistory.concertimg, "https://i.ytimg.com/vi/R6SixumDURk/maxresdefault.jpg")
     History.setAttribute(attrshistory.concert,"a")
     History.setAttribute(attrshistory.band, "a")
     History.setAttribute(attrshistory.date, "a")
