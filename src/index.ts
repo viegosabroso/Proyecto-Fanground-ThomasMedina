@@ -4,10 +4,16 @@ import "./screens/login"
 import "./screens/Profile"
 import "./screens/Concerts"
 import "./screens/Ticket"
+
+import { addObserver } from "./store/index";
+import { appState } from "./store/index";
+import { Screens } from "./types/screenstypes";
+
 export class FanGround extends HTMLElement{
     constructor() {
         super();
         this.attachShadow({ mode: "open" });
+        addObserver(this)
       }
     
       connectedCallback() {
@@ -15,13 +21,27 @@ export class FanGround extends HTMLElement{
         
     }
 
-    render(){
+    render() {
+      if(this.shadowRoot) this.shadowRoot.innerHTML = `
+      `
+      switch (appState.screen) {
+          case Screens.LOGIN:
+              const login = this.ownerDocument.createElement("my-logincontainer");
+              this.shadowRoot?.appendChild(login);
+              break;
+              case Screens.SIGNUP:
+              const signup = this.ownerDocument.createElement("my-signupcontainer");
+              this.shadowRoot?.appendChild(signup);
+              break;
+              case Screens.DASHBOARD:
+              const dashboard = this.ownerDocument.createElement("my-dashboard");
+              this.shadowRoot?.appendChild(dashboard);
+              break;
 
-        const contenedor = document.createElement("my-tickets");
-        this.shadowRoot?.appendChild(contenedor)
-    }
+          
     
 }
+}}
 
 customElements.define("index-container", FanGround);
 /*my-dashboard
@@ -29,4 +49,5 @@ customElements.define("index-container", FanGround);
   my-logincontainer
   my-profile
   my-concerts
+  my-tickets
 */
