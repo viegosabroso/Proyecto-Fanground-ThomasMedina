@@ -3,6 +3,7 @@ import "./screens/signup"
 import "./screens/login"
 import "./screens/Profile"
 import "./screens/Concerts"
+import "./screens/Ticket"
 export class FanGround extends HTMLElement{
     constructor() {
         super();
@@ -16,7 +17,7 @@ export class FanGround extends HTMLElement{
 
     render(){
 
-        const contenedor = document.createElement("my-concerts");
+        const contenedor = document.createElement("my-tickets");
         this.shadowRoot?.appendChild(contenedor)
     }
     
