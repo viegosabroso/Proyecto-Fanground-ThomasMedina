@@ -6,7 +6,7 @@ import { attrfriends } from "../components/dashboard/friends/friends";
 import { Post, attrspost } from "../components/dashboard/post/post";
 import { dataoncert } from "../components/data/databands";
 import { Soon, attrsSoon } from "../components/dashboard/soon/soon";
-import { datavideo } from "../components/data/datavideo";
+import firebase, { getPost } from "../utils/firebase";
 
 import { addObserver, appState, dispatch } from "../store";
 import { navigate } from "../store/Actions";
@@ -33,7 +33,7 @@ export class Appcontainer extends HTMLElement {
     })
   }
 
-  render() {
+  async render() {
     if (this.shadowRoot) {
 
     // las etiquetas que no necitaron foreach 
@@ -106,17 +106,21 @@ export class Appcontainer extends HTMLElement {
       containerboth.classList.add("both")
       containerboth.appendChild(containersoontext)
       //for each del soon
-      dataoncert.forEach((contaienerconcert)=>{
+      const dataBands = await getPost()
+      console.log(dataBands)
+      dataBands.forEach((Bands:any)=>{
         const containersoon = document.createElement("my-soon") as Soon
         containersoon.classList.add("containersoon")
-        containersoon.setAttribute(attrsSoon.concertname, contaienerconcert.concertname)
-        containersoon.setAttribute(attrsSoon.concertimg, contaienerconcert.concertimg)
-        containersoon.setAttribute(attrsSoon.concertdate, contaienerconcert.concertdate)
+        containersoon.setAttribute(attrsSoon.concertname, Bands.concertname)
+        containersoon.setAttribute(attrsSoon.concertimg, Bands.concertimg)
+        containersoon.setAttribute(attrsSoon.concertdate, Bands.concertdate)
         this.sooning.push(containersoon)
         containersoondiv.appendChild(containersoon)
         this.shadowRoot?.appendChild(containersoondiv)
 
       })
+
+      
       //uso un contenedor para contener el texto y y el foreach para evitar problemas en el css despues
       containerboth.appendChild(containersoondiv)
       this.shadowRoot?.appendChild(containerboth)
