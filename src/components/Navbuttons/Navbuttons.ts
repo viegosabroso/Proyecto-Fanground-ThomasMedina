@@ -10,6 +10,7 @@ export class Navbuttons extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
+    addObserver(this)
   }
 
   async connectedCallback(){
