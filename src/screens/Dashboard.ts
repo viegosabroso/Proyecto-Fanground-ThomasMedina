@@ -51,8 +51,8 @@ export class Appcontainer extends HTMLElement {
       containerfriendsdiv.appendChild(textoamigos)
       
         //el foreach de los amigos
-        
-      datafriends.forEach((containerfriends:any)=>{
+        const friendsfirebase = await getfriend()
+      friendsfirebase.forEach((containerfriends:any)=>{
         const contaienrfr = document.createElement("my-friends") as Friends
         contaienrfr.classList.add("container")
         contaienrfr.setAttribute(attrfriends.user, containerfriends.user)
@@ -82,7 +82,7 @@ export class Appcontainer extends HTMLElement {
       containerpostdiv.appendChild(commentignbox)
 
       //froeach del post
-      const friendsfirebase = await getfriend()
+      
       friendsfirebase.forEach((containerpost:any)=>{
         const containerposts = document.createElement("my-post") as Post
         containerposts.classList.add("containerpost")
