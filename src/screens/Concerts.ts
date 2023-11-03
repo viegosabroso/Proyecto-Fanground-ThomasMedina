@@ -1,6 +1,7 @@
 import "../components/indexson";
 import { attrshistory } from "../components/History/history";
 import {dataoncerthistor} from "../components/data/dataconcerts"
+import firebase,{getconcerts} from "../utils/firebase";
 
 export class Concerts extends HTMLElement {
 
@@ -13,7 +14,7 @@ export class Concerts extends HTMLElement {
     this.render();
   }
 
-  render() {
+  async render() {
     if (this.shadowRoot) {
         this.shadowRoot.innerHTML = `
         <my-header user="thomas"></my-header>
@@ -34,8 +35,9 @@ export class Concerts extends HTMLElement {
     const texthistory = this.ownerDocument.createElement("p")
     texthistory.textContent = "Comming soon"
     this.shadowRoot?.appendChild(texthistory)
-    
-    dataoncerthistor.forEach((concert)=>{
+
+    const dataconcerts = await getconcerts()
+    dataconcerts.forEach((concert:any)=>{
       const concertss = this.ownerDocument.createElement("my-concertsrc")
       concertss.setAttribute(attrshistory.concertimg, concert.concertimg)
       concertss.setAttribute(attrshistory.concert,concert.concertname)

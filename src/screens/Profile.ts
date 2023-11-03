@@ -1,7 +1,7 @@
 import "../components/indexson";
 import { attrshistory } from "../components/indexson";
-import {dataoncerthistor} from "../components/data/dataconcerts"
 
+import firebase,{getconcerts} from "../utils/firebase";
 export class Profile extends HTMLElement {
 
 
@@ -14,7 +14,7 @@ export class Profile extends HTMLElement {
     this.render();
   }
 
-  render() {
+ async render() {
     if (this.shadowRoot) {
         this.shadowRoot.innerHTML = `
         <my-header user="thomas"></my-header>
@@ -36,8 +36,8 @@ export class Profile extends HTMLElement {
     const texthistory = this.ownerDocument.createElement("p")
     texthistory.textContent = "Recent events"
     this.shadowRoot?.appendChild(texthistory)
-    
-    dataoncerthistor.forEach((concert)=>{
+    const concertdata = await getconcerts()
+    concertdata.forEach((concert:any)=>{
       const History = this.ownerDocument.createElement("my-history")
       History.setAttribute(attrshistory.concertimg, concert.concertimg)
       History.setAttribute(attrshistory.concert,concert.concertname)
