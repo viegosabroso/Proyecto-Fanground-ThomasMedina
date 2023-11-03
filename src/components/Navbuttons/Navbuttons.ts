@@ -1,5 +1,8 @@
 import Navbuttonscss from "./Navbuttons.css"
 
+import { addObserver, appState, dispatch } from "../../store";
+import { navigate } from "../../store/Actions";
+import { Screens } from "../../types/screenstypes";
 
 export class Navbuttons extends HTMLElement {
   user?: string
@@ -9,9 +12,21 @@ export class Navbuttons extends HTMLElement {
     this.attachShadow({ mode: "open" });
   }
 
-  connectedCallback() {
-    this.render();
-  }
+  async connectedCallback(){
+    this.render()
+    const button1 = this.shadowRoot?.querySelector("#concerts");
+    button1?.addEventListener(('click'), () =>{
+      dispatch(navigate(Screens.CONCERTS))
+    })
+    const button2 = this.shadowRoot?.querySelector("#home");
+    button2?.addEventListener(('click'), () =>{
+      dispatch(navigate(Screens.DASHBOARD))
+    })
+    const button3 = this.shadowRoot?.querySelector("#profile");
+    button3?.addEventListener(('click'), () =>{
+      dispatch(navigate(Screens.PROFILE))
+    })
+}
 
 
   render() {
