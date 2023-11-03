@@ -1,7 +1,13 @@
 import headercss from "./header.css"
+
+import { addObserver, appState, dispatch } from "../../../store";
+import { navigate } from "../../../store/Actions";
+import { Screens } from "../../../types/screenstypes";
+
 export enum attrs {
   "user" = "user"
 }
+
 
 export class Header extends HTMLElement {
   user?: string
@@ -11,8 +17,12 @@ export class Header extends HTMLElement {
     this.attachShadow({ mode: "open" });
   }
 
-  connectedCallback() {
+  async connectedCallback() {
     this.render();
+     const gotouser = this.shadowRoot?.querySelector("#profile");
+        gotouser?.addEventListener(('click'), () =>{
+          dispatch(navigate(Screens.PROFILE))
+        })
   }
 
   static get observedAttributes() {
@@ -45,8 +55,8 @@ export class Header extends HTMLElement {
             <img src="./FANGROUND.png" width="300em" height="30em">
             </section>
             <img src="https://cdn-icons-png.flaticon.com/512/60/60977.png" height="25em">
-            <p class="user">${this.user}</p>
-            <img src="https://cdn.icon-icons.com/icons2/1863/PNG/512/person_118819.png" height="25em">
+            <p class="user" id="profile">${this.user}</p>
+            <img src="https://cdn.icon-icons.com/icons2/1863/PNG/512/person_118819.png"  height="25em" id="profile">
             </div>
             `;
     }

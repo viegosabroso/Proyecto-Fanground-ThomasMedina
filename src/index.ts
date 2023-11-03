@@ -37,6 +37,18 @@ export class FanGround extends HTMLElement{
               const dashboard = this.ownerDocument.createElement("my-dashboard");
               this.shadowRoot?.appendChild(dashboard);
               break;
+              case Screens.PROFILE:
+              const profile = this.ownerDocument.createElement("my-profile");
+              this.shadowRoot?.appendChild(profile);
+              break;
+              case Screens.CONCERTS:
+              const concerts = this.ownerDocument.createElement("my-concerts");
+              this.shadowRoot?.appendChild(concerts);
+              break;
+              case Screens.TICKETS:
+              const tickets = this.ownerDocument.createElement("my-tickets");
+              this.shadowRoot?.appendChild(tickets);
+              break;
 
           
     
