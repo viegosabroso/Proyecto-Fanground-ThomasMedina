@@ -43,3 +43,8 @@ export const getPost = async () => {
 }
 
 console.log(addPost);
+
+export default{
+  getPost,
+  getDocs
+}
