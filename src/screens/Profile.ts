@@ -26,6 +26,7 @@ export class Profile extends HTMLElement {
           color:white;
           font-family: 'Lato', sans-serif;
           font-size: 20pt;
+          
         }
 
         </style>

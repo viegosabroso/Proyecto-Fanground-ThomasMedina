@@ -20,7 +20,7 @@ export const dataoncerthistor =[
     },
     {
       concertname:"Punk and plants",  
-      band: "VC",
+      band: "Vomite un conejito",
       concertimg: "https://f4.bcbits.com/img/a2093551838_65",
       date: "2023-11-05"
 

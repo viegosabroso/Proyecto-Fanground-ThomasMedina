@@ -6,7 +6,6 @@ import { attrfriends } from "../components/dashboard/friends/friends";
 import { Post, attrspost } from "../components/dashboard/post/post";
 import { dataoncert } from "../components/data/databands";
 import { Soon, attrsSoon } from "../components/dashboard/soon/soon";
-import { Video, attrsvideo } from "../components/dashboard/videos/videos";
 import { datavideo } from "../components/data/datavideo";
 
 
@@ -15,7 +14,7 @@ export class Appcontainer extends HTMLElement {
   friend: Friends[] = []
   posting: Post[] = []
   sooning: Soon[] = []
-  video: Video[] = []
+
   
   constructor() {
     super();
@@ -120,18 +119,7 @@ export class Appcontainer extends HTMLElement {
       populartxt.textContent="Popular videos"
       populartxt.classList.add("populartext")
       containervideodiv.appendChild(populartxt)
-      //for each del video 
-      datavideo.forEach((videocontains)=>{
-      const containervideo = document.createElement("my-video") as Video
-      containervideo.classList.add("containervideo")
-      containervideo.setAttribute(attrsvideo.video, videocontains.videoURL)
-      containervideo.setAttribute(attrsvideo.videoname, videocontains.nombreVideo)
-      containervideo.setAttribute(attrsvideo.likes, videocontains.numero)
-      containervideo.setAttribute(attrsvideo.poster, videocontains.videoposter)
-      this.video.push(containervideo)
-      containervideodiv.appendChild(containervideo)
-      this.shadowRoot?.appendChild(containervideodiv)
-      })
+      
     }
   }
 }
