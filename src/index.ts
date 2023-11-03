@@ -2,6 +2,7 @@ import "./screens/Dashboard"
 import "./screens/signup"
 import "./screens/login"
 import "./screens/Profile"
+import "./screens/Concerts"
 export class FanGround extends HTMLElement{
     constructor() {
         super();
