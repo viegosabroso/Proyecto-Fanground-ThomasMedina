@@ -60,6 +60,25 @@ export const getfriend = async () => {
 
   return transformed;
 }
+export const addconcerts = async (post: any) => {
+  try{
+      const where = collection(db, "concerts")
+      await addDoc(where, post)
+  } catch (error) {
+      console.error(error)
+  }
+}
+export const getconcerts = async () => {
+  const querySnapshot = await getDocs(collection(db, "concerts"));
+  const transformed: any = [];
+
+  querySnapshot.forEach((doc: any) => {
+      const data = doc.data();
+      transformed.push({id: doc.id, ...data})
+  });
+
+  return transformed;
+}
 
 console.log(addPost);
 
@@ -67,5 +86,6 @@ export default{
   getBands,
   getDocs,
   addfriend,
-  getfriend
+  getfriend,
+  addconcerts,getconcerts
 }
