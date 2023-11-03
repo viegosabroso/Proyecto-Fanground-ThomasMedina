@@ -6,7 +6,7 @@ import { attrfriends } from "../components/dashboard/friends/friends";
 import { Post, attrspost } from "../components/dashboard/post/post";
 import { dataoncert } from "../components/data/databands";
 import { Soon, attrsSoon } from "../components/dashboard/soon/soon";
-import firebase, { getPost } from "../utils/firebase";
+import firebase, { getBands,getfriend } from "../utils/firebase";
 
 import { addObserver, appState, dispatch } from "../store";
 import { navigate } from "../store/Actions";
@@ -51,7 +51,8 @@ export class Appcontainer extends HTMLElement {
       containerfriendsdiv.appendChild(textoamigos)
       
         //el foreach de los amigos
-      datafriends.forEach((containerfriends)=>{
+        
+      datafriends.forEach((containerfriends:any)=>{
         const contaienrfr = document.createElement("my-friends") as Friends
         contaienrfr.classList.add("container")
         contaienrfr.setAttribute(attrfriends.user, containerfriends.user)
@@ -81,7 +82,8 @@ export class Appcontainer extends HTMLElement {
       containerpostdiv.appendChild(commentignbox)
 
       //froeach del post
-      datafriends.forEach((containerpost)=>{
+      const friendsfirebase = await getfriend()
+      friendsfirebase.forEach((containerpost:any)=>{
         const containerposts = document.createElement("my-post") as Post
         containerposts.classList.add("containerpost")
         containerposts.setAttribute(attrspost.user, containerpost.user)
@@ -106,7 +108,7 @@ export class Appcontainer extends HTMLElement {
       containerboth.classList.add("both")
       containerboth.appendChild(containersoontext)
       //for each del soon
-      const dataBands = await getPost()
+      const dataBands = await getBands()
       console.log(dataBands)
       dataBands.forEach((Bands:any)=>{
         const containersoon = document.createElement("my-soon") as Soon
