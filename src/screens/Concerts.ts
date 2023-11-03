@@ -21,7 +21,7 @@ export class Concerts extends HTMLElement {
         <style>
         p{
           position: relative;
-          left: 35vw;
+          left: 45vw;
           color:white;
           font-family: 'Lato', sans-serif;
           font-size: 20pt;
@@ -30,7 +30,7 @@ export class Concerts extends HTMLElement {
         `
     }
     const texthistory = this.ownerDocument.createElement("p")
-    texthistory.textContent = "Recent events"
+    texthistory.textContent = "Comming soon"
     this.shadowRoot?.appendChild(texthistory)
     
     dataoncerthistor.forEach((concert)=>{

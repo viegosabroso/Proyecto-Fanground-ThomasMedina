@@ -1,0 +1,53 @@
+.tarjeta{
+    position: relative;
+    left: 20vw;
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    align-items: center;
+    border-radius: 20px;
+    width: 65vw;
+    margin-bottom: 20px;
+    padding: 15px;
+    
+}
+section{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+img{
+    margin-right: 15px;
+    margin-left: 20px;
+    object-fit: cover;
+    width: 200px;
+    height: 200px;
+    border-radius: 8px;
+}
+.concert{
+    position: relative;
+    font-size: 25pt;
+}
+.band{
+    position: relative;
+    bottom: 40px;
+    font-size: 18pt; 
+}
+p{
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+}
+h1{
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+}
+button{
+    position: relative;
+    left: 40vw;
+    background-color: rgb(255, 14, 14);
+    color:white;
+    font-size: 20pt;
+    border-radius: 5px;
+    border: none;
+    width: fit-content;
+}
