@@ -1,4 +1,4 @@
-
+import { Constantkey} from "../utils/store";
 import { Actions, AppState, Observer } from "../types/types";
 import { reducer } from "./reducer";
 import { Screens } from "../types/screenstypes";
@@ -8,14 +8,14 @@ const emptyState = {
 };
 
 export let appState = Storage.get<AppState>({
-  key: PersistanceKeys.STORE,
+  key: Constantkey.STORE,
   defaultValue: emptyState,
 });
 
 let observers: Observer[] = [];
 
 const persistStore = (state: AppState) =>
-  Storage.set({ key: PersistanceKeys.STORE, value: state });
+  Storage.set({ key: Constantkey.STORE, value: state });
 
 const notifyObservers = () => observers.forEach((o) => o.render());
 
