@@ -1,4 +1,4 @@
-import headercss from "./header.css"
+import Navbuttonscss from "./Navbuttons.css"
 
 
 export class Navbuttons extends HTMLElement {
@@ -17,11 +17,11 @@ export class Navbuttons extends HTMLElement {
   render() {
     if (this.shadowRoot) {
       this.shadowRoot.innerHTML = `
-            <style>${headercss}</style>
+            <style>${Navbuttonscss}</style>
             <div>
-            <button>Concerts</button>
-            <button>Home</button>
-            <button>Profile</button>
+            <button id="concert">Concerts</button>
+            <button id="home">Home</button>
+            <button id="profile">Profile</button>
             </div>
             `;
     }

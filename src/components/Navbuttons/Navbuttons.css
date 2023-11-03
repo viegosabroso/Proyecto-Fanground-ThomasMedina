@@ -1,0 +1,30 @@
+div{
+    display: flex;
+    position: relative;
+    left: 38%;
+    bottom: 20px;
+    margin-bottom: 20px;
+    gap: 40px;
+}
+button {
+    background-color: rgb(255, 14, 14);
+    color:white;
+    font-size: 15pt;
+    border-radius: 15px;
+    border: none;
+}
+button:hover {
+    transition: 500ms;
+    background-color: rgb(255, 255, 255);
+    color:rgb(0, 0, 0);
+    font-size: 15pt;
+    border-radius: 15px;
+    border: none;
+}
+#profile{
+    background-color: rgb(255, 255, 255);
+    color:rgb(0, 0, 0);
+    font-size: 15pt;
+    border-radius: 15px;
+    border: none;
+}

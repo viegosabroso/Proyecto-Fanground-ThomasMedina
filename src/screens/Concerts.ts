@@ -2,7 +2,7 @@ import "../components/indexson";
 import { attrshistory } from "../components/indexson";
 import {dataoncerthistor} from "../components/data/dataconcerts"
 
-export class Profile extends HTMLElement {
+export class Concerts extends HTMLElement {
 
 
   constructor() {
@@ -49,4 +49,4 @@ export class Profile extends HTMLElement {
   }
 }
 
-customElements.define("my-profile", Profile);
+customElements.define("my-concerts", Concerts);
