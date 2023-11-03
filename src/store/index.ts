@@ -1,4 +1,4 @@
-import { Constantkey} from "../utils/store";
+import Storage, {Constantkey} from "../utils/store";
 import { Actions, AppState, Observer } from "../types/types";
 import { reducer } from "./reducer";
 import { Screens } from "../types/screenstypes";
