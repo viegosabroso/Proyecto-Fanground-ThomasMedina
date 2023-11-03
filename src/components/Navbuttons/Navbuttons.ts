@@ -15,7 +15,7 @@ export class Navbuttons extends HTMLElement {
 
   async connectedCallback(){
     this.render()
-    const button1 = this.shadowRoot?.querySelector("#concerts");
+    const button1 = this.shadowRoot?.querySelector("#concert");
     button1?.addEventListener(('click'), () =>{
       dispatch(navigate(Screens.CONCERTS))
     })

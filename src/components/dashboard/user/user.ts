@@ -1,5 +1,9 @@
 import usercss from "./user.css"
 
+import { addObserver, appState, dispatch } from "../../../store";
+import { navigate } from "../../../store/Actions";
+import { Screens } from "../../../types/screenstypes";
+
 export enum attrsuser {
     "user" = "user",
     "userimg" = "userimg",
@@ -16,10 +20,15 @@ export enum attrsuser {
     constructor() {
       super();
       this.attachShadow({ mode: "open" });
+      addObserver(this)
     }
   
-    connectedCallback() {
+    async connectedCallback() {
       this.render();
+      const gotouser = this.shadowRoot?.querySelector("img");
+        gotouser?.addEventListener(('click'), () =>{
+          dispatch(navigate(Screens.PROFILE))
+        })
     }
   
     static get observedAttributes() {

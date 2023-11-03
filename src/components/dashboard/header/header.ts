@@ -55,7 +55,7 @@ export class Header extends HTMLElement {
             <img src="./FANGROUND.png" width="300em" height="30em">
             </section>
             <img src="https://cdn-icons-png.flaticon.com/512/60/60977.png" height="25em">
-            <p class="user" id="profile">${this.user}</p>
+            <p class="user">${this.user}</p>
             <img src="https://cdn.icon-icons.com/icons2/1863/PNG/512/person_118819.png"  height="25em" id="profile">
             </div>
             `;

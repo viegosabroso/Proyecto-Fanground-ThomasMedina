@@ -1,4 +1,9 @@
 import sooncss from "./soon.css"
+
+import { addObserver, appState, dispatch } from "../../../store";
+import { navigate } from "../../../store/Actions";
+import { Screens } from "../../../types/screenstypes";
+
 export enum attrsSoon {
     "concertname" = "concertname",
     "concertimg" = "concertimg",
@@ -12,10 +17,16 @@ export enum attrsSoon {
     constructor() {
       super();
       this.attachShadow({ mode: "open" });
+      addObserver(this)
     }
   
-    connectedCallback() {
+    async connectedCallback() {
       this.render();
+      const gotouser = this.shadowRoot?.querySelector("img");
+        gotouser?.addEventListener(('click'), () =>{
+          dispatch(navigate(Screens.CONCERTS))
+        })
+      
     }
   
     static get observedAttributes() {
