@@ -15,7 +15,7 @@ export class FanGround extends HTMLElement{
 
     render(){
 
-        const contenedor = document.createElement("my-profile");
+        const contenedor = document.createElement("my-concerts");
         this.shadowRoot?.appendChild(contenedor)
     }
     
@@ -26,4 +26,5 @@ customElements.define("index-container", FanGround);
   my-signupcontainer
   my-logincontainer
   my-profile
+  my-concerts
 */

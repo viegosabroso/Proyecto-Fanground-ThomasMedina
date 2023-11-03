@@ -27,9 +27,7 @@ export class Concerts extends HTMLElement {
           color:white;
           font-family: 'Lato', sans-serif;
           font-size: 20pt;
-
         }
-
         </style>
         `
     }
@@ -38,12 +36,12 @@ export class Concerts extends HTMLElement {
     this.shadowRoot?.appendChild(texthistory)
     
     dataoncerthistor.forEach((concert)=>{
-      const History = this.ownerDocument.createElement("my-history")
-      History.setAttribute(attrshistory.concertimg, concert.concertimg)
-      History.setAttribute(attrshistory.concert,concert.concertname)
-      History.setAttribute(attrshistory.band, concert.band)
-      History.setAttribute(attrshistory.date, concert.date)
-      this.shadowRoot?.appendChild(History)
+      const concertss = this.ownerDocument.createElement("my-concertsrc")
+      concertss.setAttribute(attrshistory.concertimg, concert.concertimg)
+      concertss.setAttribute(attrshistory.concert,concert.concertname)
+      concertss.setAttribute(attrshistory.band, concert.band)
+      concertss.setAttribute(attrshistory.date, concert.date)
+      this.shadowRoot?.appendChild(concertss)
     })
     
   }
