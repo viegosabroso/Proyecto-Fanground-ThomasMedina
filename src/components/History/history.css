@@ -5,17 +5,30 @@
     flex-direction: row;
     background-color: white;
     align-items: center;
-    border-radius: 20px;
+    border-radius: 20px 0 0 20px;
+    width: 65vw;
+    margin-bottom: 20px;
+    padding: 15px;
+    
 }
 section{
     display: flex;
     flex-direction: column;
-
+    gap: 40px;
 }
 img{
     margin-right: 15px;
     margin-left: 20px;
     object-fit: cover;
-    width: 148px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
 }
+.concert{
+    position: relative;
+    font-size: 25pt;
+}
+.band{
+    font-size: 18pt; 
+}
+p{margin: 0;}
+h1{margin: 0;}

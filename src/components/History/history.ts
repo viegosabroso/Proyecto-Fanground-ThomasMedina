@@ -64,9 +64,9 @@ export enum attrshistory {
         <div class="tarjeta">
         <img src="${this.concertimg}">
         <section>
-        <h1>${this.concert}</h1>
-        <p>${this.band}</p>
-        <p>${this.date}</p>
+        <h1 class="concert">${this.concert}</h1>
+        <p class="band">${this.band}</p>
+        <p class="date">${this.date}</p>
         </section>
         </div>
 

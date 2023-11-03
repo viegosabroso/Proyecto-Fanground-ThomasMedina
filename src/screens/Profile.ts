@@ -1,5 +1,6 @@
 import "../components/indexson";
 import { attrshistory } from "../components/indexson";
+import {dataoncerthistor} from "../components/data/dataconcerts"
 
 export class Profile extends HTMLElement {
 
@@ -24,19 +25,25 @@ export class Profile extends HTMLElement {
           left: 35vw;
           color:white;
           font-family: 'Lato', sans-serif;
+          font-size: 20pt;
         }
+
         </style>
         `
     }
     const texthistory = this.ownerDocument.createElement("p")
     texthistory.textContent = "Recent events"
     this.shadowRoot?.appendChild(texthistory)
-    const History = this.ownerDocument.createElement("my-history")
-    History.setAttribute(attrshistory.concertimg, "https://i.ytimg.com/vi/R6SixumDURk/maxresdefault.jpg")
-    History.setAttribute(attrshistory.concert,"a")
-    History.setAttribute(attrshistory.band, "a")
-    History.setAttribute(attrshistory.date, "a")
-    this.shadowRoot?.appendChild(History)
+    
+    dataoncerthistor.forEach((concert)=>{
+      const History = this.ownerDocument.createElement("my-history")
+      History.setAttribute(attrshistory.concertimg, concert.concertimg)
+      History.setAttribute(attrshistory.concert,concert.concertname)
+      History.setAttribute(attrshistory.band, concert.band)
+      History.setAttribute(attrshistory.date, concert.date)
+      this.shadowRoot?.appendChild(History)
+    })
+    
   }
 }
 
