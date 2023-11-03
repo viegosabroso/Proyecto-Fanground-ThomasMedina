@@ -1,5 +1,5 @@
-
 import postcss from "./post.css"
+
 export enum attrspost {
   "user" = "user",
   "userimg" = "userimg",
@@ -18,11 +18,6 @@ export class Post extends HTMLElement {
         super();
         this.attachShadow({ mode: "open" });
       }
-    
-      connectedCallback() {
-        this.render();
-      }
-    
       static get observedAttributes() {
         const attrs: Record<attrspost, null> = {
           user: null,
@@ -50,14 +45,12 @@ export class Post extends HTMLElement {
           this.comment = newValue;
           break;
           case attrspost.imgcomment:
-
             this.imgcomment = newValue !== undefined ? newValue : undefined;
             break;
   
         }
         this.render();
       }
-    
       render() {
         if (this.shadowRoot) {
           this.shadowRoot.innerHTML = `

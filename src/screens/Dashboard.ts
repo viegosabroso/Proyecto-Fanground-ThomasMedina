@@ -8,6 +8,9 @@ import { dataoncert } from "../components/data/databands";
 import { Soon, attrsSoon } from "../components/dashboard/soon/soon";
 import { datavideo } from "../components/data/datavideo";
 
+import { addObserver, appState, dispatch } from "../store";
+import { navigate } from "../store/Actions";
+import { Screens } from "../types/screenstypes";
 
 export class Appcontainer extends HTMLElement {
 
@@ -19,10 +22,15 @@ export class Appcontainer extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
+    addObserver(this)
   }
 
-  connectedCallback() {
+  async connectedCallback() {
     this.render();
+    const button1 = this.shadowRoot?.querySelector(".imguser");
+    button1?.addEventListener(('click'), () =>{
+      dispatch(navigate(Screens.PROFILE))
+    })
   }
 
   render() {

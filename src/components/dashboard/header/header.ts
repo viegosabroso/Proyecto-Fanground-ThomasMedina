@@ -15,6 +15,7 @@ export class Header extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
+    addObserver(this)
   }
 
   async connectedCallback() {
@@ -22,6 +23,10 @@ export class Header extends HTMLElement {
      const gotouser = this.shadowRoot?.querySelector("#profile");
         gotouser?.addEventListener(('click'), () =>{
           dispatch(navigate(Screens.PROFILE))
+        })
+        const gotohome = this.shadowRoot?.querySelector("#fanground");
+        gotohome?.addEventListener(('click'), () =>{
+          dispatch(navigate(Screens.DASHBOARD))
         })
   }
 
@@ -52,7 +57,7 @@ export class Header extends HTMLElement {
             <div class="square">
             <section>
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/2048px-Hamburger_icon.svg.png" width="30em" height="30em">
-            <img src="./FANGROUND.png" width="300em" height="30em">
+            <img src="./FANGROUND.png" width="300em" height="30em" id="fanground">
             </section>
             <img src="https://cdn-icons-png.flaticon.com/512/60/60977.png" height="25em">
             <p class="user">${this.user}</p>

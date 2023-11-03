@@ -1,6 +1,10 @@
 import { Profile } from "../../screens/Profile"
 import Profilecss from "./profile.css"
 
+import { addObserver, appState, dispatch } from "../../store";
+import { navigate } from "../../store/Actions";
+import { Screens } from "../../types/screenstypes";
+
 export enum attrsuser {
     "user" = "user",
     "userimg" = "userimg",
@@ -17,10 +21,15 @@ export enum attrsuser {
     constructor() {
       super();
       this.attachShadow({ mode: "open" });
+      addObserver(this)
     }
   
-    connectedCallback() {
+    async connectedCallback() {
       this.render();
+      const button1 = this.shadowRoot?.querySelector("button");
+    button1?.addEventListener(('click'), () =>{
+      dispatch(navigate(Screens.LOGIN))
+    })
     }
   
     static get observedAttributes() {
@@ -64,7 +73,7 @@ export enum attrsuser {
             <div class="medal" >
             <p>Profesional rocker</p>
             </div>
-            <button>Edit profile</button>
+            <button>Close session</button>
             </section>
             <section class="section2">
             <img src="${this.userimg}" class="imguser" height="150" width="150" >

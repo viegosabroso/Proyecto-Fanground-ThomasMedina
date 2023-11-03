@@ -1,5 +1,9 @@
 import concertscomcss from "./Concertscom.css"
 
+import { addObserver, appState, dispatch } from "../../store";
+import { navigate } from "../../store/Actions";
+import { Screens } from "../../types/screenstypes";
+
 export enum attrshistory {
     "concertimg" = "concertimg",
     "concert" = "concert",
@@ -17,10 +21,16 @@ export enum attrshistory {
     constructor() {
       super();
       this.attachShadow({ mode: "open" });
+      addObserver(this)
+
     }
   
     connectedCallback() {
       this.render();
+      const gotouser = this.shadowRoot?.querySelector("button");
+        gotouser?.addEventListener(('click'), () =>{
+          dispatch(navigate(Screens.TICKETS))
+        })
     }
   
     static get observedAttributes() {
