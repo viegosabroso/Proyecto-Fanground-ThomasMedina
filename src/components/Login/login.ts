@@ -5,6 +5,10 @@ export enum attrslogin {
   "buttontext" = "buttontext"
 }
 
+import { addObserver, appState, dispatch } from "../../store";
+import { navigate } from "../../store/Actions";
+import { Screens } from "../../types/screenstypes";
+
 export class Login extends HTMLElement {
   firsttxt?: string
   buttontext?:string
@@ -12,10 +16,19 @@ export class Login extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
+    addObserver(this)
   }
 
-  connectedCallback() {
+  async connectedCallback() {
     this.render();
+    const button1 = this.shadowRoot?.querySelector("p");
+    button1?.addEventListener(('click'), () =>{
+      dispatch(navigate(Screens.SIGNUP))
+    })
+    const button2 = this.shadowRoot?.querySelector("button");
+    button2?.addEventListener(('click'), () =>{
+      dispatch(navigate(Screens.DASHBOARD))
+    })
   }
 
   static get observedAttributes() {

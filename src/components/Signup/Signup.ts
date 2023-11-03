@@ -5,6 +5,10 @@ export enum attrssingup {
   "buttontext" = "buttontext"
 }
 
+import { addObserver, appState, dispatch } from "../../store";
+import { navigate } from "../../store/Actions";
+import { Screens } from "../../types/screenstypes";
+
 export class Signup extends HTMLElement {
   firsttxt?: string
   buttontext?:string
@@ -12,11 +16,17 @@ export class Signup extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
+    addObserver(this)
   }
 
-  connectedCallback() {
+  async connectedCallback() {
     this.render();
+    const button3 = this.shadowRoot?.querySelector("button");
+    button3?.addEventListener(('click'), () =>{
+      dispatch(navigate(Screens.LOGIN))
+    })
   }
+
 
   static get observedAttributes() {
     const attrssing: Record<attrssingup, null> = {
