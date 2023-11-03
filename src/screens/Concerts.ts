@@ -1,5 +1,5 @@
 import "../components/indexson";
-import { attrshistory } from "../components/indexson";
+import { attrshistory } from "../components/History/history";
 import {dataoncerthistor} from "../components/data/dataconcerts"
 
 export class Concerts extends HTMLElement {
@@ -29,6 +29,8 @@ export class Concerts extends HTMLElement {
         </style>
         `
     }
+    const imgtextcontainer = this.ownerDocument.createElement("my-imgtext")
+    this.shadowRoot?.appendChild(imgtextcontainer)
     const texthistory = this.ownerDocument.createElement("p")
     texthistory.textContent = "Comming soon"
     this.shadowRoot?.appendChild(texthistory)
@@ -41,7 +43,6 @@ export class Concerts extends HTMLElement {
       concertss.setAttribute(attrshistory.date, concert.date)
       this.shadowRoot?.appendChild(concertss)
     })
-    
   }
 }
 

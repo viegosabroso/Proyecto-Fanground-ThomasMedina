@@ -1,0 +1,22 @@
+@font-face {
+    font-family: 'Enigma';
+    src: url("./Enigma-Bold.otf");}
+div{
+    position: relative;
+    left: 24vw;
+    background-image: url("https://s3-alpha-sig.figma.com/img/39d5/361d/11ba4b6eb4db2631c4cf698cf40d4ec3?Expires=1699833600&Signature=cFmUbtHGcIxpeAAS1PdfkDgeXxpo6PbBE8GzDK8rMDp7fc26T86Ft4n-tzJKuMqMq1iXZ75ymEJG5KY4bxbFwqyIL4giZc4yWK7J6qt7AVC3Tg9qhleXxV3el5yFzi89nTcNJLeWKEUFqWDYt95g-Y1XS9w7iwedDLxhX6gbn9YRy7arMJT6IFsqaDeHvJPzEnPgpUkFVpHQ0r~Jp0l9T~K7u8e7~kn1ORgIAN9Vx8cDlGbsXODQdtRE9uMRmJpFob-7ClzEbWs1gExb5HeD8bXyXmT9UKHFPVeATUiq7AScmsbljqs16t2oi~yHg5g-JUZirGkvBJT8lC5H-52wrw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4");
+    background-size: 400px 300px;
+    height: 300px;
+    width: 800px;
+    background-repeat: repeat-x;
+    filter: brightness(70%);
+}
+h1{
+    font-family: 'Enigma';
+    font-weight:bold;
+    position: relative;
+    bottom: 13vw;
+    left: 29vw;
+    color: white;
+    font-size: 20pt;
+}
