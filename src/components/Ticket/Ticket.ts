@@ -1,41 +1,38 @@
 import { Timestamp } from "firebase/firestore";
-import  Ticketscss from "./Tickets.css"
+import Ticketscss from "./Tickets.css";
 import { addObserver, appState, dispatch } from "../../store";
 import { navigate } from "../../store/Actions";
 import { Screens } from "../../types/screenstypes";
 export enum attrstickets {
   "titlee" = "titlee",
-  "igmscr"="igmscr",
+  "igmscr" = "igmscr",
   "date" = "date",
   "typeoftickets" = "typeoftickets",
   "price" = "price",
-  "amount" = "amount"
+  "amount" = "amount",
 }
 
-
-
 export class Ticketss extends HTMLElement {
-  titlee?: string
-  date?:string
-  igmscr?: string
-  typeoftickets?: string
-  price?: string
-  amount?: string
+  titlee?: string;
+  date?: string;
+  igmscr?: string;
+  typeoftickets?: string;
+  price?: string;
+  amount?: string;
 
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
-    addObserver(this)
+    addObserver(this);
   }
 
   async connectedCallback() {
     this.render();
     const button3 = this.shadowRoot?.querySelector("button");
-    button3?.addEventListener(('click'), () =>{
-      dispatch(navigate(Screens.LOGIN))
-    })
+    button3?.addEventListener("click", () => {
+      dispatch(navigate(Screens.LOGIN));
+    });
   }
-
 
   static get observedAttributes() {
     const attrssing: Record<attrstickets, null> = {
@@ -44,21 +41,24 @@ export class Ticketss extends HTMLElement {
       igmscr: null,
       typeoftickets: null,
       price: null,
-      amount:null
-      
+      amount: null,
     };
     return Object.keys(attrssing);
   }
 
-attributeChangedCallback(propName:attrstickets,oldValue: string | undefined,newValue: string | undefined){
-    switch(propName){
-        default: 
+  attributeChangedCallback(
+    propName: attrstickets,
+    oldValue: string | undefined,
+    newValue: string | undefined
+  ) {
+    switch (propName) {
+      default:
         this[propName] = newValue;
         break;
     }
-    
+
     this.render();
-}
+  }
 
   render() {
     if (this.shadowRoot) {

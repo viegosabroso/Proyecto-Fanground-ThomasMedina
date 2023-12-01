@@ -1,33 +1,32 @@
-import headercss from "./header.css"
+import headercss from "./header.css";
 
 import { addObserver, appState, dispatch } from "../../../store";
 import { navigate } from "../../../store/Actions";
 import { Screens } from "../../../types/screenstypes";
 
 export enum attrs {
-  "user" = "user"
+  "user" = "user",
 }
 
-
 export class Header extends HTMLElement {
-  user?: string
+  user?: string;
 
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
-    addObserver(this)
+    addObserver(this);
   }
 
   async connectedCallback() {
     this.render();
-     const gotouser = this.shadowRoot?.querySelector("#profile");
-        gotouser?.addEventListener(('click'), () =>{
-          dispatch(navigate(Screens.PROFILE))
-        })
-        const gotohome = this.shadowRoot?.querySelector("#fanground");
-        gotohome?.addEventListener(('click'), () =>{
-          dispatch(navigate(Screens.DASHBOARD))
-        })
+    const gotouser = this.shadowRoot?.querySelector("#profile");
+    gotouser?.addEventListener("click", () => {
+      dispatch(navigate(Screens.PROFILE));
+    });
+    const gotohome = this.shadowRoot?.querySelector("#fanground");
+    gotohome?.addEventListener("click", () => {
+      dispatch(navigate(Screens.DASHBOARD));
+    });
   }
 
   static get observedAttributes() {

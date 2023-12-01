@@ -1,8 +1,8 @@
 import { Timestamp } from "firebase/firestore";
-import Signupcss from "./signup.css"
+import Signupcss from "./signup.css";
 export enum attrssingup {
   "firsttxt" = "firsttxt",
-  "buttontext" = "buttontext"
+  "buttontext" = "buttontext",
 }
 
 import { addObserver, appState, dispatch } from "../../store";
@@ -11,35 +11,33 @@ import { Screens } from "../../types/screenstypes";
 import firebase from "../../utils/firebase";
 
 const credentials = {
-  email : "",
-  password : "",
-}
+  email: "",
+  password: "",
+};
 
 export class Signup extends HTMLElement {
-  firsttxt?: string
-  buttontext?:string
+  firsttxt?: string;
+  buttontext?: string;
 
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
-    addObserver(this)
+    addObserver(this);
   }
 
   async connectedCallback() {
     this.render();
     const button3 = this.shadowRoot?.querySelector("button");
-    button3?.addEventListener(('click'), () =>{
-      dispatch(navigate(Screens.LOGIN))
-    })
+    button3?.addEventListener("click", () => {
+      dispatch(navigate(Screens.LOGIN));
+    });
     console.log(credentials);
-    
   }
-
 
   static get observedAttributes() {
     const attrssing: Record<attrssingup, null> = {
       firsttxt: null,
-      buttontext: null
+      buttontext: null,
     };
     return Object.keys(attrssing);
   }
@@ -54,14 +52,13 @@ export class Signup extends HTMLElement {
         this.firsttxt = newValue;
         break;
       case attrssingup.buttontext:
-        this.buttontext = newValue
-
+        this.buttontext = newValue;
     }
     this.render();
   }
 
-  async handleRegisterBtn(){
-    firebase.register(credentials)
+  async handleRegisterBtn() {
+    firebase.register(credentials);
   }
 
   render() {
@@ -85,17 +82,17 @@ export class Signup extends HTMLElement {
     </div>
     `;
     }
-    const email = this.shadowRoot?.querySelector("#emailregister")
-    email?.addEventListener('change', (e: any) => {
-        credentials.email = e.target.value
-    })
-    const password = this.shadowRoot?.querySelector("#passwordregister")
-    password?.addEventListener('change', (e: any) => {
-        credentials.password = e.target.value
-    })
+    const email = this.shadowRoot?.querySelector("#emailregister");
+    email?.addEventListener("change", (e: any) => {
+      credentials.email = e.target.value;
+    });
+    const password = this.shadowRoot?.querySelector("#passwordregister");
+    password?.addEventListener("change", (e: any) => {
+      credentials.password = e.target.value;
+    });
 
-    const buttonregister = this.shadowRoot?.querySelector(".register-btn")
-    buttonregister?.addEventListener('click',this.handleRegisterBtn)
+    const buttonregister = this.shadowRoot?.querySelector(".register-btn");
+    buttonregister?.addEventListener("click", this.handleRegisterBtn);
   }
 }
 

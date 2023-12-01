@@ -28,8 +28,7 @@ export class Profilescr extends HTMLElement {
     const button1 = this.shadowRoot?.querySelector("button");
     button1?.addEventListener("click", () => {
       firebase.closeSession();
-      console.log('click');
-      
+      console.log("click");
     });
   }
 

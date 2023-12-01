@@ -1,71 +1,71 @@
-import usercss from "./user.css"
+import usercss from "./user.css";
 
 import { addObserver, appState, dispatch } from "../../../store";
 import { navigate } from "../../../store/Actions";
 import { Screens } from "../../../types/screenstypes";
 
 export enum attrsuser {
-    "user" = "user",
-    "userimg" = "userimg",
-    "status" = "status",
-    "concert" = "concert"
-  }
-  
-  export class User extends HTMLElement {
-    user?: string
-    userimg?: string
-    status?: string
-    concert?: string
+  "user" = "user",
+  "userimg" = "userimg",
+  "status" = "status",
+  "concert" = "concert",
+}
 
-    constructor() {
-      super();
-      this.attachShadow({ mode: "open" });
-      addObserver(this)
-    }
-  
-    async connectedCallback() {
-      this.render();
-      const gotouser = this.shadowRoot?.querySelector("img");
-        gotouser?.addEventListener(('click'), () =>{
-          dispatch(navigate(Screens.PROFILE))
-        })
-    }
-  
-    static get observedAttributes() {
-      const attrs: Record<attrsuser, null> = {
-        user: null,
-        userimg: null,
-        status:null,
-        concert:null,
-      };
-      return Object.keys(attrs);
-    }
-  
-    attributeChangedCallback(
-      propName: attrsuser,
-      oldValue: string | undefined,
-      newValue: string | undefined
-    ) {
-      switch (propName) {
-        case attrsuser.user:
+export class User extends HTMLElement {
+  user?: string;
+  userimg?: string;
+  status?: string;
+  concert?: string;
+
+  constructor() {
+    super();
+    this.attachShadow({ mode: "open" });
+    addObserver(this);
+  }
+
+  async connectedCallback() {
+    this.render();
+    const gotouser = this.shadowRoot?.querySelector("img");
+    gotouser?.addEventListener("click", () => {
+      dispatch(navigate(Screens.PROFILE));
+    });
+  }
+
+  static get observedAttributes() {
+    const attrs: Record<attrsuser, null> = {
+      user: null,
+      userimg: null,
+      status: null,
+      concert: null,
+    };
+    return Object.keys(attrs);
+  }
+
+  attributeChangedCallback(
+    propName: attrsuser,
+    oldValue: string | undefined,
+    newValue: string | undefined
+  ) {
+    switch (propName) {
+      case attrsuser.user:
         this.user = newValue;
         break;
-        case attrsuser.userimg:
+      case attrsuser.userimg:
         this.userimg = newValue;
         break;
-        case attrsuser.status:
+      case attrsuser.status:
         this.status = newValue;
         break;
-        case attrsuser.concert:
+      case attrsuser.concert:
         this.concert = newValue;
         break;
-      }
-      this.render();
     }
-  
-    render() {
-      if (this.shadowRoot) {
-        this.shadowRoot.innerHTML = `
+    this.render();
+  }
+
+  render() {
+    if (this.shadowRoot) {
+      this.shadowRoot.innerHTML = `
               <style>${usercss}</style>
               <section>
               <img src="${this.userimg}" width="160vw">
@@ -75,9 +75,8 @@ export enum attrsuser {
               <p class="concert">${this.concert}</p>
               </section>
         `;
-      }
     }
   }
-  
-  customElements.define("my-user", User);
-  
+}
+
+customElements.define("my-user", User);

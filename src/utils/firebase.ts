@@ -1,4 +1,3 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getFirestore, onSnapshot, query } from "firebase/firestore";
 import { collection, addDoc, getDocs } from "firebase/firestore";
@@ -12,11 +11,7 @@ import {
 import { dispatch } from "../store";
 import { navigate } from "../store/Actions";
 import { Screens } from "../types/screenstypes";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyA90m5UOZt4bH1ndXVmKjGGgetrAPAn4Gc",
   authDomain: "fanground-5a809.firebaseapp.com",
@@ -27,23 +22,16 @@ const firebaseConfig = {
   measurementId: "G-JB4FS3Q6E2",
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const auth = getAuth(app);
 
 onAuthStateChanged(auth, (user) => {
   if (user) {
-    // User is signed in, see docs for a list of available properties
-    // https://firebase.google.com/docs/reference/js/auth.user
     const uid = user.uid;
     console.log(uid);
     dispatch(navigate(Screens.DASHBOARD));
-
-    // ...
   } else {
-    // User is signed out
-    // ...
     dispatch(navigate(Screens.LOGIN));
     console.log("No.");
   }
@@ -192,5 +180,5 @@ export default {
   login,
   addcpost,
   closeSession,
-  listener
+  listener,
 };

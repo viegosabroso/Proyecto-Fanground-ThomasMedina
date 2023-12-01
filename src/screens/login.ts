@@ -1,8 +1,6 @@
 import "../components/indexson";
 
 export class Containerlogin extends HTMLElement {
-
-
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
@@ -14,9 +12,9 @@ export class Containerlogin extends HTMLElement {
 
   render() {
     if (this.shadowRoot) {
-        this.shadowRoot.innerHTML = `
+      this.shadowRoot.innerHTML = `
         <my-login firsttxt="Log in" buttontext="Log in"></my-login>
-        `
+        `;
     }
   }
 }

@@ -1,10 +1,9 @@
 import "../components/indexson";
 import { attrshistory } from "../components/History/history";
-import {dataoncerthistor} from "../components/data/dataconcerts"
-import firebase,{getconcerts} from "../utils/firebase";
+import { dataoncerthistor } from "../components/data/dataconcerts";
+import firebase, { getconcerts } from "../utils/firebase";
 
 export class Concerts extends HTMLElement {
-
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
@@ -16,7 +15,7 @@ export class Concerts extends HTMLElement {
 
   async render() {
     if (this.shadowRoot) {
-        this.shadowRoot.innerHTML = `
+      this.shadowRoot.innerHTML = `
         <my-header user="thomas"></my-header>
         <my-buttons></my-buttons>
         <style>
@@ -28,23 +27,23 @@ export class Concerts extends HTMLElement {
           font-size: 20pt;
         }
         </style>
-        `
+        `;
     }
-    const imgtextcontainer = this.ownerDocument.createElement("my-imgtext")
-    this.shadowRoot?.appendChild(imgtextcontainer)
-    const texthistory = this.ownerDocument.createElement("p")
-    texthistory.textContent = "Comming soon"
-    this.shadowRoot?.appendChild(texthistory)
+    const imgtextcontainer = this.ownerDocument.createElement("my-imgtext");
+    this.shadowRoot?.appendChild(imgtextcontainer);
+    const texthistory = this.ownerDocument.createElement("p");
+    texthistory.textContent = "Comming soon";
+    this.shadowRoot?.appendChild(texthistory);
 
-    const dataconcerts = await getconcerts()
-    dataconcerts.forEach((concert:any)=>{
-      const concertss = this.ownerDocument.createElement("my-concertsrc")
-      concertss.setAttribute(attrshistory.concertimg, concert.concertimg)
-      concertss.setAttribute(attrshistory.concert,concert.concertname)
-      concertss.setAttribute(attrshistory.band, concert.band)
-      concertss.setAttribute(attrshistory.date, concert.date)
-      this.shadowRoot?.appendChild(concertss)
-    })
+    const dataconcerts = await getconcerts();
+    dataconcerts.forEach((concert: any) => {
+      const concertss = this.ownerDocument.createElement("my-concertsrc");
+      concertss.setAttribute(attrshistory.concertimg, concert.concertimg);
+      concertss.setAttribute(attrshistory.concert, concert.concertname);
+      concertss.setAttribute(attrshistory.band, concert.band);
+      concertss.setAttribute(attrshistory.date, concert.date);
+      this.shadowRoot?.appendChild(concertss);
+    });
   }
 }
 
