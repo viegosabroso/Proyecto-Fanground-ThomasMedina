@@ -64,21 +64,23 @@ attributeChangedCallback(propName:attrstickets,oldValue: string | undefined,newV
     if (this.shadowRoot) {
       this.shadowRoot.innerHTML = `
       <style>${Ticketscss}</style>
+      <div>
       <section class="section1">
       <img src="${this.igmscr}">
       <h2>${this.typeoftickets}</h2>
-      <section>
+      <section class="section3">
       <button>-</button>
       <p>${this.amount}</p>
-      <button>+</button>
-      <p>${this.price}</p>
-      <button>BUY</button>
+      <button class="plus">+</button>
       </section>
+      <p>${this.price}</p>
+      <button class="buy">BUY</button>
       </section> 
       <section class="section2">
       <h1>${this.titlee}</h1>
-      <img src="https://s3-alpha-sig.figma.com/img/e327/a630/2cee7b319f2a4fb7a416a2dfb7469402?Expires=1702252800&Signature=T2J9-Ywt6wd35xA5zILZJQbU~O0Ifg4upQixhWp1VsAdBnPWAVtbp2jO3hKaGcDhWSunp8Ab94MSbfcEcmYAyys1JrYO9s0r7fdHNpXQVSQKWNcRmWPDrI41fNwf6pFzBU19UQc8ejaT8e70xJbLDyrPHqIArJdbPbd~Rt6JcvHn5rsWT~CmYrzQKDrX--1QrQIhis-dpZvVaSRZuwUzRiojlcrhkgwkpLSTITgSlFt1XhOW9zwBurD9x6DqV~9PJQS7z5qUx9b-DxBRrJqfKbyV38X4eV54mthuEux7jJWSZBhHMyf5n-cjyVl4Fp3LMxul5ASv3EOvog91sAGl4A__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4">
+      <img src="https://s3-alpha-sig.figma.com/img/e327/a630/2cee7b319f2a4fb7a416a2dfb7469402?Expires=1702252800&Signature=T2J9-Ywt6wd35xA5zILZJQbU~O0Ifg4upQixhWp1VsAdBnPWAVtbp2jO3hKaGcDhWSunp8Ab94MSbfcEcmYAyys1JrYO9s0r7fdHNpXQVSQKWNcRmWPDrI41fNwf6pFzBU19UQc8ejaT8e70xJbLDyrPHqIArJdbPbd~Rt6JcvHn5rsWT~CmYrzQKDrX--1QrQIhis-dpZvVaSRZuwUzRiojlcrhkgwkpLSTITgSlFt1XhOW9zwBurD9x6DqV~9PJQS7z5qUx9b-DxBRrJqfKbyV38X4eV54mthuEux7jJWSZBhHMyf5n-cjyVl4Fp3LMxul5ASv3EOvog91sAGl4A__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" width="200px" height="200px">
       </section>
+      </div>
     `;
     }
   }

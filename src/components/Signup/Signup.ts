@@ -8,6 +8,12 @@ export enum attrssingup {
 import { addObserver, appState, dispatch } from "../../store";
 import { navigate } from "../../store/Actions";
 import { Screens } from "../../types/screenstypes";
+import firebase from "../../utils/firebase";
+
+const credentials = {
+  email : "",
+  password : "",
+}
 
 export class Signup extends HTMLElement {
   firsttxt?: string
@@ -25,6 +31,8 @@ export class Signup extends HTMLElement {
     button3?.addEventListener(('click'), () =>{
       dispatch(navigate(Screens.LOGIN))
     })
+    console.log(credentials);
+    
   }
 
 
@@ -52,6 +60,10 @@ export class Signup extends HTMLElement {
     this.render();
   }
 
+  async handleRegisterBtn(){
+    firebase.register(credentials)
+  }
+
   render() {
     if (this.shadowRoot) {
       this.shadowRoot.innerHTML = `
@@ -59,9 +71,9 @@ export class Signup extends HTMLElement {
     <img src="./FANGROUNDwhite.png" width="300em" height="30em">
     <div class="square">
     <h1>${this.firsttxt}</h1>
-    <input class="inputpile" type="email" id="email" placeholder="Email">
+    <input class="inputpile" type="email" id="emailregister" placeholder="Email">
     <input class="inputpile" type="text" id="user" placeholder="Nickname">
-    <input class="inputpile" type="password" id="password" placeholder="Password">
+    <input class="inputpile" type="password" id="passwordregister" placeholder="Password">
     <input class="inputpile" type="password" id="paswordconfirm" placeholder="Confirm password">
     <section>
     <input type="checkbox" id="checkbox1" value="second_checkbox">
@@ -69,10 +81,21 @@ export class Signup extends HTMLElement {
     </section>
     <div class="linea"></div>
     <p>By registering, you agree to provide accurate information and use our services responsibly within legal and ethical boundaries.</p>
-    <button>${this.buttontext}</button>
+    <button class="register-btn">${this.buttontext}</button>
     </div>
     `;
     }
+    const email = this.shadowRoot?.querySelector("#emailregister")
+    email?.addEventListener('change', (e: any) => {
+        credentials.email = e.target.value
+    })
+    const password = this.shadowRoot?.querySelector("#passwordregister")
+    password?.addEventListener('change', (e: any) => {
+        credentials.password = e.target.value
+    })
+
+    const buttonregister = this.shadowRoot?.querySelector(".register-btn")
+    buttonregister?.addEventListener('click',this.handleRegisterBtn)
   }
 }
 

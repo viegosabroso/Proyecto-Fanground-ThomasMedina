@@ -6,11 +6,15 @@ import { attrfriends } from "../components/dashboard/friends/friends";
 import { Post, attrspost } from "../components/dashboard/post/post";
 import { dataoncert } from "../components/data/databands";
 import { Soon, attrsSoon } from "../components/dashboard/soon/soon";
-import firebase, { addPost, getBands,getfriend } from "../utils/firebase";
+import firebase, { addcpost, getBands,getfriend } from "../utils/firebase";
 
 import { addObserver, appState, dispatch } from "../store";
 import { navigate } from "../store/Actions";
 import { Screens } from "../types/screenstypes";
+
+const posts = {
+  comment: ""
+}
 
 export class Appcontainer extends HTMLElement {
 
@@ -81,7 +85,18 @@ export class Appcontainer extends HTMLElement {
       commentignbox.classList.add("textbox")
       commentignbox.setAttribute("placeholder", "what are you thinking")
       containerpostdiv.appendChild(commentignbox)
-
+      console.log(commentignbox);
+      
+      commentignbox?.addEventListener('keydown', (e: KeyboardEvent) => {
+        if (e.key === 'Enter') {
+          posts.comment = commentignbox.value;
+          // Post the comment using Firebase
+          // Replace the following code with your Firebase implementation
+          firebase.addcpost(posts)
+          // Clear the input field
+          commentignbox.value = '';
+        }
+      });
       //froeach del post
       
       friendsfirebase.forEach((containerpost:any)=>{
