@@ -40,6 +40,7 @@ export class Appcontainer extends HTMLElement {
       this.shadowRoot.innerHTML = `
       <link rel="stylesheet" href="./index.css">
       <my-header user="${data.user}"></my-header>
+      <my-buttons></my-buttons>
       <my-user userimg="${data.imguser}" user="${data.user}" status="${data.status}" concert="${data.concert}"></my-user>`;
 
       // div que contiene los amigos

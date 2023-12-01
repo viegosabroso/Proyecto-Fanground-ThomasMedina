@@ -17,15 +17,15 @@ export class Tickets extends HTMLElement {
   async render() {
     if (this.shadowRoot) {
         this.shadowRoot.innerHTML = `
-        <my-header user="thomas"></my-header>
+        <my-header user="Thomas"></my-header>
         <my-buttons></my-buttons>
         `
     }
     const ticketsdata = await gettickets()
-    const tickets = this.ownerDocument.createElement("my-ticketscopm")
+    const tickets = this.ownerDocument.createElement("my-ticketscomp") as Tickets
       tickets.setAttribute(attrstickets.Title, ticketsdata.Title)
-      tickets.setAttribute(attrstickets.date,ticketsdata.date)
-      tickets.setAttribute(attrstickets.igmscr, ticketsdata.igmscr)
+      tickets.setAttribute(attrstickets.date,ticketsdata.Date)
+      tickets.setAttribute(attrstickets.igmscr, ticketsdata.Igmscr)
       tickets.setAttribute(attrstickets.TypeOfTickets, ticketsdata.TypeOfTickets)
       tickets.setAttribute(attrstickets.Price, ticketsdata.Price)
       tickets.setAttribute(attrstickets.amount, ticketsdata.Amount)
