@@ -47,8 +47,18 @@ export const addfriend = async (post: any) => {
       await addDoc(where, post)
   } catch (error) {
       console.error(error)
-  }
+  }}
+export const gettickets  = async () => {
+  const querySnapshot = await getDocs(collection(db,"tickets"))
+  const transformed: any = []
+
+  querySnapshot.forEach((doc: any) => {
+    const data = doc.data();
+    transformed.push({id: doc.id, ...data})
+});
+return transformed
 }
+
 export const getfriend = async () => {
   const querySnapshot = await getDocs(collection(db, "Friends"));
   const transformed: any = [];
@@ -87,5 +97,4 @@ export default{
   getDocs,
   addfriend,
   getfriend,
-  addconcerts,getconcerts
-}
+  addconcerts,getconcerts,gettickets}

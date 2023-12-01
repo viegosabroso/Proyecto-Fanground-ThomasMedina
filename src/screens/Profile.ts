@@ -19,7 +19,7 @@ export class Profile extends HTMLElement {
         this.shadowRoot.innerHTML = `
         <my-header user="thomas"></my-header>
         <my-buttons></my-buttons>
-        <my-profilescr user="Username" userimg="https://i.pinimg.com/736x/f4/28/4e/f4284e8ad18d8017492f645102f47496.jpg" status="Carpe diem..." ></my-profilescr>
+        <my-profilescr user="Username" userimg="https://i.pinimg.com/1200x/3a/12/2c/3a122c6bdcb7956a296a58715191a525.jpg" status="Carpe diem..." ></my-profilescr>
         <style>
         p{
           position: relative;

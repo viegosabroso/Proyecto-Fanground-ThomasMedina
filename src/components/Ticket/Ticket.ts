@@ -1,8 +1,11 @@
 import { Timestamp } from "firebase/firestore";
-import Signupcss from "./signup.css"
-export enum attrssingup {
-  "firsttxt" = "firsttxt",
-  "buttontext" = "buttontext"
+export enum attrstickets {
+  "Title" = "Title",
+  "igmscr"="igmscr",
+  "date" = "date",
+  "TypeOfTickets" = "TypeOfTickets",
+  "Price" = "Price",
+  "amount" = "amount"
 }
 
 import { addObserver, appState, dispatch } from "../../store";
@@ -10,8 +13,12 @@ import { navigate } from "../../store/Actions";
 import { Screens } from "../../types/screenstypes";
 
 export class Ticketss extends HTMLElement {
-  firsttxt?: string
-  buttontext?:string
+  Title?: string
+  date?:string
+  igmscr?: string
+  TypeOfTickets?: string
+  Price?: string
+  amount?: string
 
   constructor() {
     super();
@@ -29,51 +36,48 @@ export class Ticketss extends HTMLElement {
 
 
   static get observedAttributes() {
-    const attrssing: Record<attrssingup, null> = {
-      firsttxt: null,
-      buttontext: null
+    const attrssing: Record<attrstickets, null> = {
+      Title: null,
+      date: null,
+      igmscr: null,
+      TypeOfTickets: null,
+      Price: null,
+      amount:null
+      
     };
     return Object.keys(attrssing);
   }
 
-  attributeChangedCallback(
-    propName: attrssingup,
-    oldValue: string | undefined,
-    newValue: string | undefined
-  ) {
-    switch (propName) {
-      case attrssingup.firsttxt:
-        this.firsttxt = newValue;
+attributeChangedCallback(propName:attrstickets,oldValue: string | undefined,newValue: string | undefined){
+    switch(propName){
+        default: 
+        this[propName] = newValue;
         break;
-      case attrssingup.buttontext:
-        this.buttontext = newValue
-
     }
+    
     this.render();
-  }
+}
 
   render() {
     if (this.shadowRoot) {
       this.shadowRoot.innerHTML = `
-    <style>${Signupcss}</style>
-    <img src="./FANGROUNDwhite.png" width="300em" height="30em">
-    <div class="square">
-    <h1>${this.firsttxt}</h1>
-    <input class="inputpile" type="email" id="email" placeholder="Email">
-    <input class="inputpile" type="text" id="user" placeholder="Nickname">
-    <input class="inputpile" type="password" id="password" placeholder="Password">
-    <input class="inputpile" type="password" id="paswordconfirm" placeholder="Confirm password">
-    <section>
-    <input type="checkbox" id="checkbox1" value="second_checkbox">
-    <label for="checkbox1">Receive news and product emails.</label>
-    </section>
-    <div class="linea"></div>
-    <p>By registering, you agree to provide accurate information and use our services responsibly within legal and ethical boundaries.</p>
-    <button>${this.buttontext}</button>
-    </div>
+      <section>
+      <img src="${this.igmscr}">
+      <h2>${this.TypeOfTickets}</h2>
+      <section>
+      <button>-</button>
+      <p>${this.amount}</p>
+      <button>+</button>
+      </section>
+      <p>${this.Price}</p>
+      </section> 
+      <section>
+      <h1>${this.title}</h1>
+      <img src="https://s3-alpha-sig.figma.com/img/e327/a630/2cee7b319f2a4fb7a416a2dfb7469402?Expires=1702252800&Signature=T2J9-Ywt6wd35xA5zILZJQbU~O0Ifg4upQixhWp1VsAdBnPWAVtbp2jO3hKaGcDhWSunp8Ab94MSbfcEcmYAyys1JrYO9s0r7fdHNpXQVSQKWNcRmWPDrI41fNwf6pFzBU19UQc8ejaT8e70xJbLDyrPHqIArJdbPbd~Rt6JcvHn5rsWT~CmYrzQKDrX--1QrQIhis-dpZvVaSRZuwUzRiojlcrhkgwkpLSTITgSlFt1XhOW9zwBurD9x6DqV~9PJQS7z5qUx9b-DxBRrJqfKbyV38X4eV54mthuEux7jJWSZBhHMyf5n-cjyVl4Fp3LMxul5ASv3EOvog91sAGl4A__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4">
+      </section>
     `;
     }
   }
 }
 
-customElements.define("my-tickets", Ticketss);
+customElements.define("my-ticketscomp", Ticketss);
