@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore";
+import { getFirestore, onSnapshot, query } from "firebase/firestore";
 import { collection, addDoc, getDocs } from "firebase/firestore";
 import {
   createUserWithEmailAndPassword,
@@ -38,13 +38,13 @@ onAuthStateChanged(auth, (user) => {
     // https://firebase.google.com/docs/reference/js/auth.user
     const uid = user.uid;
     console.log(uid);
-    dispatch(navigate(Screens.DASHBOARD))
+    dispatch(navigate(Screens.DASHBOARD));
 
     // ...
   } else {
     // User is signed out
     // ...
-    dispatch(navigate(Screens.LOGIN))
+    dispatch(navigate(Screens.LOGIN));
     console.log("No.");
   }
 });
@@ -168,7 +168,17 @@ export const getconcerts = async () => {
   return transformed;
 };
 
-console.log(addPost);
+const q = query(collection(db, "Friends"));
+
+const listener = onSnapshot(q, (querySnapshot) => {
+  const newComments: any = [];
+  querySnapshot.forEach((doc) => {
+    newComments.push(doc.data());
+  });
+  return newComments;
+});
+
+console.log(listener);
 
 export default {
   getBands,
@@ -181,5 +191,6 @@ export default {
   register,
   login,
   addcpost,
-  closeSession
+  closeSession,
+  listener
 };
