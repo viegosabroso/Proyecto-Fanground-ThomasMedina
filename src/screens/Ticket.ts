@@ -22,14 +22,17 @@ export class Tickets extends HTMLElement {
         `
     }
     const ticketsdata = await gettickets()
-    const tickets = this.ownerDocument.createElement("my-ticketscomp") as Tickets
-      tickets.setAttribute(attrstickets.Title, ticketsdata.Title)
-      tickets.setAttribute(attrstickets.date,ticketsdata.Date)
-      tickets.setAttribute(attrstickets.igmscr, ticketsdata.Igmscr)
-      tickets.setAttribute(attrstickets.TypeOfTickets, ticketsdata.TypeOfTickets)
-      tickets.setAttribute(attrstickets.Price, ticketsdata.Price)
-      tickets.setAttribute(attrstickets.amount, ticketsdata.Amount)
+    ticketsdata.forEach((ticketsinfo:any) => {
+      
+      const tickets = this.ownerDocument.createElement("my-ticketscomp") as Tickets
+      tickets.setAttribute(attrstickets.titlee, ticketsinfo.Title )
+      tickets.setAttribute(attrstickets.date,ticketsinfo.Date)
+      tickets.setAttribute(attrstickets.igmscr, ticketsinfo.Imgsrc)
+      tickets.setAttribute(attrstickets.typeoftickets, ticketsinfo.TypeOfTicket)
+      tickets.setAttribute(attrstickets.price, ticketsinfo.Price)
+      tickets.setAttribute(attrstickets.amount, ticketsinfo.Amount)
       this.shadowRoot?.appendChild(tickets)
+    });
     
   }
 }
