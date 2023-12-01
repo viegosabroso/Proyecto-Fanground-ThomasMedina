@@ -6,7 +6,7 @@ import { attrfriends } from "../components/dashboard/friends/friends";
 import { Post, attrspost } from "../components/dashboard/post/post";
 import { dataoncert } from "../components/data/databands";
 import { Soon, attrsSoon } from "../components/dashboard/soon/soon";
-import firebase, { getBands,getfriend } from "../utils/firebase";
+import firebase, { addPost, getBands,getfriend } from "../utils/firebase";
 
 import { addObserver, appState, dispatch } from "../store";
 import { navigate } from "../store/Actions";

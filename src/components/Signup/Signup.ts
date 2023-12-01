@@ -1,5 +1,5 @@
 import { Timestamp } from "firebase/firestore";
-import Signupcss from "../Signup"
+import Signupcss from "./signup.css"
 export enum attrssingup {
   "firsttxt" = "firsttxt",
   "buttontext" = "buttontext"
@@ -55,7 +55,7 @@ export class Signup extends HTMLElement {
   render() {
     if (this.shadowRoot) {
       this.shadowRoot.innerHTML = `
-    <style>${Signupcss}}</style>
+    <style>${Signupcss}</style>
     <img src="./FANGROUNDwhite.png" width="300em" height="30em">
     <div class="square">
     <h1>${this.firsttxt}</h1>
